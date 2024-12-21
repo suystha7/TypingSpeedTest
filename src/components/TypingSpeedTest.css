@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom right, #e6dba8, #c1e3ed);
+    background: linear-gradient(to bottom right, #a8e6c5, #c1e8ed);
     color: #333;
     height: 100vh;
     display: flex;
@@ -14,10 +14,10 @@ body {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 5px;
     width: 90%;
     max-width: 700px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .title {
@@ -25,6 +25,7 @@ body {
     margin-bottom: 20px;
     font-weight: bold;
     color: #34495e;
+    text-transform: uppercase;
 }
 
 .section {
@@ -47,8 +48,8 @@ select {
     padding: 10px;
     width: 100%;
     font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #bdc3c7;
+    border-radius: 2px;
+    border: 1px solid #7096af;
     background: #ecf0f1;
     color: #34495e;
 }
@@ -58,12 +59,12 @@ textarea {
     height: 120px;
     margin-top: 15px;
     padding: 15px;
-    font-size: 1rem;
-    border-radius: 10px;
+    font-size: 1.5rem;
+    border-radius: 2px;
     border: 1px solid #bdc3c7;
     background: #f8f9fa;
     color: #2c3e50;
-    user-select: none; /* Prevent text selection */
+    user-select: none;
 }
 
 .progress-bar {
@@ -89,18 +90,18 @@ textarea {
     border: none;
     padding: 10px 25px;
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
     margin-top: 20px;
     transition: background 0.3s;
 }
 
 .btn:hover {
-    background: #16a085;
+    background: #31cfb0;
 }
 
 .result-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 20px;
     color: #2c3e50;
 }
@@ -108,14 +109,13 @@ textarea {
 .result-value {
     font-weight: bold;
     color: #27ae60;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .hidden {
     display: none;
 }
 
-/* New styling for text display with borders */
 #textDisplay {
     display: inline-block;
     padding: 20px;

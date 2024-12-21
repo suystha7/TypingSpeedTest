@@ -175,7 +175,7 @@ const TypingSpeedTest = () => {
 
       {!testState.isActive && results.wpm > 0 && (
         <div className="results">
-          <h2>Results</h2>
+          <h2>Results:</h2>
           <p>
             Typing Speed: <span className="result-value">{results.wpm}</span>{" "}
             WPM
