@@ -2,7 +2,7 @@ body {
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom right, #a8e6c5, #c1e8ed);
+  background: linear-gradient(to bottom right, #7ae47d, #c8d968);
   color: #333;
   height: 100vh;
   display: flex;
@@ -22,7 +22,7 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
   text-transform: uppercase;
   color: #333;
-  padding: 25px; 
+  padding: 20px; 
   border-radius: 5px;
   text-align: center;
   font-size: 30px;
@@ -134,7 +134,6 @@ textarea {
   word-wrap: break-word;
 }
 
-/* Material Icons for select button */
 .material-icons {
   font-family: "Material Icons";
   font-size: 1.5rem;
@@ -142,7 +141,6 @@ textarea {
   margin-left: 10px;
 }
 
-/* Add padding and margin to buttons */
 button {
   padding: 12px 30px;
   margin: 10px 0;
@@ -152,7 +150,6 @@ button {
   font-size: 1rem;
 }
 
-/* Adjust button styles with Material Icons */
 button .material-icons {
   margin-left: 8px;
 }
