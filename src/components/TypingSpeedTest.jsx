@@ -11,12 +11,11 @@ import { PlayArrow, RestartAlt } from "@mui/icons-material";
 import "./TypingSpeedTest.css";
 import { quotes } from "..";
 
-const generateRandomText = (field) => {
-  const fieldQuotes = quotes[field] || [];
-  const randomQuote =
-    fieldQuotes[Math.floor(Math.random() * fieldQuotes.length)];
-
-  return randomQuote;
+const generateRandomText = (difficulty, field) => {
+  const fieldQuotes = quotes[difficulty]?.[field] || [];
+  if (fieldQuotes.length === 0)
+    return "No quotes available for this combination.";
+  return fieldQuotes[Math.floor(Math.random() * fieldQuotes.length)];
 };
 
 const TypingSpeedTest = () => {
@@ -27,6 +26,7 @@ const TypingSpeedTest = () => {
   });
   const [testState, setTestState] = useState({
     isActive: false,
+    startTime: 0,
     timer: 0,
     currentText: "",
     typedText: "",
@@ -39,7 +39,10 @@ const TypingSpeedTest = () => {
     let interval;
     if (testState.isActive && testState.timer < settings.duration) {
       interval = setInterval(() => {
-        setTestState((prev) => ({ ...prev, timer: prev.timer + 1 }));
+        setTestState((prev) => ({
+          ...prev,
+          timer: Math.floor((Date.now() - prev.startTime) / 1000),
+        }));
       }, 1000);
     } else if (testState.timer >= settings.duration) {
       stopTest();
@@ -48,9 +51,10 @@ const TypingSpeedTest = () => {
   }, [testState.isActive, testState.timer, settings.duration]);
 
   const startTest = () => {
-    const randomText = generateRandomText(settings.field);
+    const randomText = generateRandomText(settings.difficulty, settings.field);
     setTestState({
       isActive: true,
+      startTime: Date.now(),
       timer: 0,
       currentText: randomText,
       typedText: "",
@@ -92,6 +96,7 @@ const TypingSpeedTest = () => {
     setResults({ wpm: 0, accuracy: 0 });
     setTestState({
       isActive: false,
+      startTime: 0,
       timer: 0,
       currentText: "",
       typedText: "",
@@ -180,17 +185,14 @@ const TypingSpeedTest = () => {
         {testState.isActive && (
           <div className="test-section">
             <div className="test-card">
-              <p
-                className="text-display"
-                style={{
-                  fontSize: "24px",
-                  fontWeight: "bold",
-                  color: "#333",
-                  marginBottom: "20px",
-                }}
-              >
-                "{testState.currentText}"
-              </p>
+              <div className="title-card">
+                <p className="text-display">"{testState.currentText}"</p>
+                <p>
+                  <strong>Difficulty:</strong>{" "}
+                  {settings.difficulty.charAt(0).toUpperCase() +
+                    settings.difficulty.slice(1)}
+                </p>
+              </div>
 
               <TextField
                 value={testState.typedText}
@@ -202,49 +204,24 @@ const TypingSpeedTest = () => {
                 disabled={!testState.isActive}
               />
 
-              <div
-                className="progress-bar"
-                style={{
-                  height: "10px",
-                  width: "100%",
-                  backgroundColor: "#e0e0e0",
-                  borderRadius: "5px",
-                  marginBottom: "20px",
-                }}
-              >
+              <div className="progress-bar">
                 <div
                   style={{
-                    height: "100%",
-                    width: `${(testState.timer / settings.duration) * 100}%`,
-                    backgroundColor: "#4caf50",
-                    borderRadius: "5px",
+                    width: `${(testState.timer / settings.duration) * 100}%`, // Calculate progress as a percentage
                   }}
                 ></div>
               </div>
 
-              <div
-                className="stats"
-                style={{ textAlign: "center", fontSize: "18px" }}
-              >
-                <p style={{ margin: "5px 0" }}>
+              <div className="stats">
+                <p>
                   <strong>Time Left:</strong>{" "}
                   {settings.duration - testState.timer}s
                 </p>
-                <p style={{ margin: "5px 0" }}>
-                  <strong>WPM:</strong>{" "}
-                  {Math.round(
-                    (testState.typedText.split(/\s+/).length /
-                      testState.timer) *
-                      60
-                  ) || 0}
+                <p>
+                  <strong>WPM:</strong> {results.wpm}
                 </p>
-                <p style={{ margin: "5px 0" }}>
-                  <strong>Accuracy:</strong>{" "}
-                  {(
-                    (testState.correctCharacters / testState.typedCharacters) *
-                    100
-                  ).toFixed(2) || 0}
-                  %
+                <p>
+                  <strong>Accuracy:</strong> {results.accuracy}%
                 </p>
               </div>
             </div>
@@ -252,23 +229,16 @@ const TypingSpeedTest = () => {
         )}
 
         {!testState.isActive && results.wpm > 0 && (
-          <div
-            className="results"
-          >
-            <h2
-            >
-              Results:
-            </h2>
-            <div style={{ marginBottom: "10px", fontSize: "20px" }}>
-              <p>
-                <strong>Typing Speed:</strong>{" "}
-                <span className="result-value">{results.wpm}</span> wpm
-              </p>
-              <p>
-                <strong>Accuracy:</strong>{" "}
-                <span className="result-value">{results.accuracy}</span>%
-              </p>
-            </div>
+          <div className="results">
+            <h2>Results:</h2>
+            <p>
+              <strong>Typing Speed:</strong>
+              <span className="result-value"> {results.wpm}</span> wpm
+            </p>
+            <p>
+              <strong>Accuracy:</strong>{" "}
+              <span className="result-value">{results.accuracy}</span>%
+            </p>
             <Button
               fullWidth
               onClick={restartTest}
