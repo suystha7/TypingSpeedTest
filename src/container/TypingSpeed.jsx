@@ -22,7 +22,7 @@ const TypingSpeed = () => {
   const [settings, setSettings] = useState({
     difficulty: "easy",
     duration: 15,
-    field: "science",
+    field: "MERN",
   });
   const [testState, setTestState] = useState({
     isActive: false,

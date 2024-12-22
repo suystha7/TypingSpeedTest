@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"; 
+import PropTypes from "prop-types";
 import { InputLabel, FormControl, Select, MenuItem } from "@mui/material";
 
 const FieldSelector = ({ field, onChange }) => (
@@ -6,14 +6,13 @@ const FieldSelector = ({ field, onChange }) => (
     <InputLabel>Field</InputLabel>
     <FormControl fullWidth>
       <Select value={field} onChange={onChange}>
-        <MenuItem value="science">Science</MenuItem>
-        <MenuItem value="web development">Web Development</MenuItem>
-        <MenuItem value="psychology">Psychology</MenuItem>
-        <MenuItem value="IT">IT</MenuItem>
-        <MenuItem value="ALML">AI/ML</MenuItem>
-        <MenuItem value="IOT">IOT</MenuItem>
-        <MenuItem value="GK">General Knowledge</MenuItem>
-        <MenuItem value="sociology">Sociology</MenuItem>
+        <MenuItem value="MERN">MERN</MenuItem>
+        <MenuItem value="CSS">CSS</MenuItem>
+        <MenuItem value="HTML">HTML</MenuItem>
+        <MenuItem value="JavaScript">JavaScript</MenuItem>
+        <MenuItem value="Quality Assurance">Quality Assurance</MenuItem>
+        <MenuItem value="AI">AI</MenuItem>
+        <MenuItem value="ML">ML</MenuItem>
       </Select>
     </FormControl>
   </div>
