@@ -11,6 +11,9 @@ const FieldSelector = ({ field, onChange }) => (
         <MenuItem value="HTML">HTML</MenuItem>
         <MenuItem value="JavaScript">JavaScript</MenuItem>
         <MenuItem value="Quality Assurance">Quality Assurance</MenuItem>
+        <MenuItem value="UI/UX">UI/UX</MenuItem>
+        <MenuItem value="Project Manager">Project Manager</MenuItem>
+        <MenuItem value="DevOps">DevOps</MenuItem>
         <MenuItem value="AI">AI</MenuItem>
         <MenuItem value="ML">ML</MenuItem>
       </Select>
@@ -19,8 +22,8 @@ const FieldSelector = ({ field, onChange }) => (
 );
 
 FieldSelector.propTypes = {
-  field: PropTypes.string.isRequired,   
-  onChange: PropTypes.func.isRequired,  
+  field: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default FieldSelector;
