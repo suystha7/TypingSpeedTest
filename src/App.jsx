@@ -1,6 +1,6 @@
 
 import './App.css'
-import TypingSpeedTest from './components/TypingSpeedTest'
+import TypingSpeedTest from './container/TypingSpeedTest'
 
 function App() {
 
