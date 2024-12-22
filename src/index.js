@@ -49,6 +49,27 @@ export const quotes = {
       "Data is the fuel that powers machine learning",
       "ML is reshaping industries with smarter solutions",
     ],
+    "UI/UX": [
+      "A great user interface is the gateway to a delightful user experience",
+      "UI/UX design focuses on understanding the user's needs and behaviors",
+      "Consistency in UI design ensures a seamless user experience",
+      "Good design is invisible; great design is unforgettable",
+      "Design is not just what it looks like; it's how it works",
+    ],
+    "Project Manager": [
+      "A project manager is the glue that holds the team together",
+      "Effective communication is the backbone of project management",
+      "Planning and adaptability are keys to project success",
+      "Project managers turn ideas into reality with structured processes",
+      "Leadership and collaboration drive successful project outcomes",
+    ],
+    DevOps: [
+      "DevOps bridges the gap between development and operations",
+      "Automation in DevOps enhances speed and reliability",
+      "CI/CD pipelines streamline the software delivery process",
+      "DevOps emphasizes collaboration, communication, and integration",
+      "Continuous monitoring is crucial for maintaining system health",
+    ],
   },
   medium: {
     MERN: [
@@ -100,6 +121,27 @@ export const quotes = {
       "Machine learning is the foundation for predictive analytics",
       "ML enables systems to recognize patterns and make decisions automatically",
     ],
+    "UI/UX": [
+      "Effective UI/UX design requires understanding the user's journey",
+      "User feedback is a critical component of the design process",
+      "Consistency in design ensures trust and usability",
+      "Prototyping and wireframes are essential steps in UI/UX design",
+      "A well-designed user interface enhances brand credibility",
+    ],
+    "Project Manager": [
+      "A good project manager ensures timely delivery and resource optimization",
+      "Risk assessment is a crucial part of project management",
+      "Managing stakeholder expectations is key to successful projects",
+      "Effective project managers foster collaboration across teams",
+      "Prioritizing tasks ensures smooth project workflows",
+    ],
+    DevOps: [
+      "DevOps practices reduce time-to-market for new features",
+      "Infrastructure as code (IaC) is a fundamental DevOps principle",
+      "Monitoring and logging are critical for maintaining system reliability",
+      "Continuous deployment accelerates the delivery pipeline",
+      "DevOps fosters a culture of shared responsibility and collaboration",
+    ],
   },
   hard: {
     MERN: [
@@ -150,6 +192,27 @@ export const quotes = {
       "Machine learning pipelines streamline the training and deployment process",
       "ML systems must address issues like overfitting and data bias",
       "Reinforcement learning enables machines to make decisions in dynamic environments",
+    ],
+    "UI/UX": [
+      "Designing for accessibility ensures inclusivity in user experience",
+      "User personas help tailor designs to specific target audiences",
+      "Advanced UI/UX tools enable rapid prototyping and testing",
+      "UI micro-interactions create a more engaging user experience",
+      "Data-driven design decisions improve user satisfaction",
+    ],
+    "Project Manager": [
+      "Agile methodologies empower teams to deliver incrementally",
+      "Effective scope management prevents project delays",
+      "Strategic resource allocation ensures project efficiency",
+      "Advanced project management tools enhance productivity",
+      "Successful project managers align goals with organizational objectives",
+    ],
+    DevOps: [
+      "DevOps relies on version control systems like Git for collaboration",
+      "Kubernetes enables container orchestration at scale in DevOps",
+      "DevOps practices prioritize automation and continuous improvement",
+      "Site reliability engineering complements DevOps for system stability",
+      "Security in DevOps, or DevSecOps, ensures systems are protected end-to-end",
     ],
   },
 };
