@@ -1,14 +1,12 @@
-
-import './App.css'
-import TypingSpeedTest from './container/TypingSpeedTest'
+import "./App.css";
+import TypingSpeed from "./container/TypingSpeed";
 
 function App() {
-
   return (
     <>
-     <TypingSpeedTest />
+      <TypingSpeed />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
