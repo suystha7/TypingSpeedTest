@@ -6,7 +6,7 @@ import DifficultySelector from "../components/DifficultySelector";
 import FieldSelector from "../components/FieldSelector";
 import DurationSelector from "../components/DurationSeletor";
 import TextDisplay from "../components/TextDisplay";
-import Results from "../components/Results";
+import Results from "./Results";
 import Timer from "../components/Timer";
 import TypingInput from "../components/TypingInput";
 import { formatTime } from "../utils/format";
@@ -18,7 +18,7 @@ const generateRandomText = (difficulty, field) => {
   return fieldQuotes[Math.floor(Math.random() * fieldQuotes.length)];
 };
 
-const TypingSpeedTest = () => {
+const TypingSpeed = () => {
   const [settings, setSettings] = useState({
     difficulty: "easy",
     duration: 15,
@@ -148,9 +148,19 @@ const TypingSpeedTest = () => {
     });
   };
 
+  const getTitle = () => {
+    if (!testState.isActive && results.wpm === 0) {
+      return "Want to know your typing speed ?";
+    }
+    if (testState.isActive) {
+      return "Let's start typing";
+    }
+    return "Result you obtained";
+  };
+
   return (
     <>
-      <h1 className="title">Typing Speed Test</h1>
+      <h1 className="title">{getTitle()}</h1>
       <div className="container">
         {!testState.isActive && results.wpm === 0 && (
           <div className="settings">
@@ -238,4 +248,4 @@ const TypingSpeedTest = () => {
   );
 };
 
-export default TypingSpeedTest;
+export default TypingSpeed;
